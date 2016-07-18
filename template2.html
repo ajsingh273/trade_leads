@@ -54,10 +54,8 @@ $.ajax({
   },
 
   success: function(data) {
-    var source;
-    source.append(data.source); 
     
-  		if (source == 'AUSTRALIA') 
+  		if (data === "AUSTRALIA") 
 			var agency = $('<p></p>');
 			agency.append(data.agency);
 			var contract_value = $('<p></p>');
@@ -98,7 +96,7 @@ $.ajax({
 			world_regions.append(data.world_regions);
 			$('body').append(agency, contract_value, description, parent_id, procurement_method, publish_date_amended, status, industry, ita_industries, project_number, publish_date, start_date, end_date, country, country_name, url, source, trade_regions, world_regions);
    		
-   		else if (source == 'CANADA')
+   		else if (data === "CANADA")
    			var country = $('<p></p>');
 			country.append(data.country);
 			var country_name = $('<p></p>');
@@ -151,7 +149,7 @@ $.ajax({
 			world_regions.append(data.world_regions);			
 			$('body').append(country, country_name, title, reference_number, contract_number, publish_date, end_date, publish_date_amended, status, industry, ita_industries, specific_location, notice_type, trade_agreement, bid_type, competitive_procurement_strategy, non_competitive_procurement_strategy, procurement_organization, implementing_entity, description, contact, urls, source, trade_regions, world_regions);				
 			
-   		else if (source == 'FBO')
+   		else if (data === "FBO")
    			var notice_type = $('<p></p>');
 			notice_type.append(data.notice_type);			
 			var publish_date = $('<p></p>');
@@ -198,7 +196,7 @@ $.ajax({
 			world_regions.append(data.world_regions);			
 			$('body').append(notice_type, publish_date, procurement_organization, procurement_office, procurement_organization_address, classification_code, industry, ita_industries, procurement_office_address, title, contract_number, end_date, contact, description, competitive_procurement_strategy, url, country, country_name, specific_address, source, trade_regions, world_regions);	
 			
-   		else if (source == 'STATE')   		
+   		else if (data === "STATE")   		
    			var lead_source = $('<p></p>');
 			lead_source.append(data.lead_source);			
 			var country = $('<p></p>');
@@ -251,7 +249,7 @@ $.ajax({
 			world_regions.append(data.world_regions);			
 			$('body').append(lead_source, country, country_name, specific_location, title, project_number, industry, ita_industries, project_size, description, tags, publish_date, end_date, funding_source, borrowing_entity, procurement_organization, contact, comments, submitting_officer, submitting_officer_contact, url, status, source, trade_regions, world_regions);	
 			
-   		else if (source == 'UK')   		
+   		else if (data === "UK")   		
    			var country = $('<p></p>');
 			country.append(data.country);			
 			var country_name = $('<p></p>');
@@ -292,7 +290,7 @@ $.ajax({
 			world_regions.append(data.world_regions);			
 			$('body').append(country, country_name, reference_number, publish_date, min_contract_value, max_contract_value, status, url, procurement_organization, contact, title, description, notice_type, industry, ita_industries, specific_location, source, trade_regions, world_regions);	
    		
-   		else if (source == 'MCA')   		
+   		else if (data === "MCA")   		
    			var country = $('<p></p>');
 			country.append(data.country);			
 			var country_name = $('<p></p>');
@@ -317,7 +315,7 @@ $.ajax({
 			world_regions.append(data.world_regions);			
 			$('body').append(country, country_name, publish_date, url, categories, title, description, funding_source, source, trade_regions, world_regions);	
 			
-   		else if (source == 'USTDA')   		
+   		else if (data === "USTDA")   		
    			var title = $('<p></p>');
 			title.append(data.title);			
 			var publish_date = $('<p></p>');
