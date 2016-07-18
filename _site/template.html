@@ -1,0 +1,364 @@
+<!DOCTYPE html> 
+<html> 
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+    <script type='text/javascript'> 
+      //<![CDATA[
+    (function($) {
+    $.QueryString = (function(a) {
+        if (a == "") return {};
+        var b = {};
+        for (var i = 0; i < a.length; ++i)
+        {
+            var p=a[i].split('=');
+            if (p.length != 2) continue;
+            b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+        }
+        return b;
+    })(window.location.search.substr(1).split('&'))
+})(jQuery);
+
+    id = $.QueryString['id'];
+url = 'https://api.trade.gov/trade_leads/' + encodeURIComponent(id) + '?api_key=_aZaWWLd8jSl8Ha4S6Xv7OMI';
+$.ajax({
+
+  // The 'type' property sets the HTTP method.
+  // A value of 'PUT' or 'DELETE' will trigger a preflight request.
+  type: 'GET',
+
+  // The URL to make the request to.
+  // url: 'https://api.govwizely.com/trade_leads/DATATABLE.471?api_key=Jnl2JctPOiUL9x7HVFR2m8Sr',
+  url: url,
+
+  // The 'contentType' property sets the 'Content-Type' header.
+  // The JQuery default for this property is
+  // 'application/x-www-form-urlencoded; charset=UTF-8', which does not trigger
+  // a preflight. If you set this value to anything other than
+  // application/x-www-form-urlencoded, multipart/form-data, or text/plain,
+  // you will trigger a preflight request.
+  contentType: 'text/plain',
+
+  xhrFields: {
+    // The 'xhrFields' property sets additional fields on the XMLHttpRequest.
+    // This can be used to set the 'withCredentials' property.
+    // Set the value to 'true' if you'd like to pass cookies to the server.
+    // If this is enabled, your server must respond with the header
+    // 'Access-Control-Allow-Credentials: true'.
+    withCredentials: false
+  },
+
+  headers: {
+    // Set any custom headers here.
+    // If you set any non-simple headers, your server must include these
+    // headers in the 'Access-Control-Allow-Headers' response header.
+  },
+
+  success: function(data) {
+    var source;
+    source.append(data.source); 
+    
+  		if (source == 'AUSTRALIA') 
+			var agency = $('<p></p>');
+			agency.append(data.agency);
+			var contract_value = $('<p></p>');
+			contract_value.append(data.contract_value);
+			var description = $('<p></p>');
+			description.append(data.description);
+			var parent_id = $('<p></p>');
+			parent_id.append(data.parent_id);
+			var procurement_method = $('<p></p>');
+			procurement_method.append(data.procurement_method);
+			var publish_date_amended = $('<p></p>');
+			publish_date_amended.append(data.publish_date_amended);
+			var status = $('<p></p>');
+			status.append(data.status);
+			var industry = $('<p></p>');
+			industry.append(data.industry);
+			var ita_industries = $('<p></p>');
+			ita_industries.append(data.ita_industries);
+			var project_number = $('<p></p>');
+			project_number.append(data.project_number);
+			var publish_date = $('<p></p>');
+			publish_date.append(data.publish_date);
+			var start_date = $('<p></p>');
+			start_date.append(data.start_date);
+			var end_date = $('<p></p>');
+			end_date.append(data.end_date);
+			var country = $('<p></p>');
+			country.append(data.country);
+			var country_name = $('<p></p>');
+			country_name.append(data.country_name);
+			var url = $('<p></p>');
+			url.append(data.url);
+			var source = $('<p></p>');
+			source.append(data.source);
+			var trade_regions = $('<p></p>');
+			trade_regions.append(data.trade_regions);
+			var world_regions = $('<p></p>');
+			world_regions.append(data.world_regions);
+			$('body').append(agency, contract_value, description, parent_id, procurement_method, publish_date_amended, status, industry, ita_industries, project_number, publish_date, start_date, end_date, country, country_name, url, source, trade_regions, world_regions);
+   		
+   		else if (source == 'CANADA')
+   			var country = $('<p></p>');
+			country.append(data.country);
+			var country_name = $('<p></p>');
+			country_name.append(data.country_name);
+			var title = $('<p></p>');
+			title.append(data.title);			
+			var reference_number = $('<p></p>');
+			reference_number.append(data.reference_number);			
+			var contract_number = $('<p></p>');
+			contract_number.append(data.contract_number);			
+			var publish_date = $('<p></p>');
+			publish_date.append(data.publish_date);			
+			var end_date = $('<p></p>');
+			end_date.append(data.end_date);			
+			var publish_date_amended = $('<p></p>');
+			publish_date_amended.append(data.publish_date_amended);			
+			var status = $('<p></p>');
+			status.append(data.status);			
+			var industry = $('<p></p>');
+			industry.append(data.industry);			
+   			var ita_industries = $('<p></p>');
+			ita_industries.append(data.ita_industries);			
+			var specific_location = $('<p></p>');
+			specific_location.append(data.specific_location);			
+			var notice_type = $('<p></p>');
+			notice_type.append(data.notice_type);			
+			var trade_agreement = $('<p></p>');
+			trade_agreement.append(data.trade_agreement);			
+			var bid_type = $('<p></p>');
+			bid_type.append(data.bid_type);			
+			var competitive_procurement_strategy = $('<p></p>');
+			competitive_procurement_strategy.append(data.competitive_procurement_strategy);			
+			var non_competitive_procurement_strategy = $('<p></p>');
+			non_competitive_procurement_strategy.append(data.non_competitive_procurement_strategy);			
+			var procurement_organization = $('<p></p>');
+			procurement_organization.append(data.procurement_organization);			
+			var implementing_entity = $('<p></p>');
+			implementing_entity.append(data.implementing_entity);			
+			var description = $('<p></p>');
+			description.append(data.description);
+			var contact = $('<p></p>');
+			contact.append(data.contact);			
+			var urls = $('<p></p>');
+			urls.append(data.urls);			
+			var source = $('<p></p>');
+			source.append(data.source);			
+			var trade_regions = $('<p></p>');
+			trade_regions.append(data.trade_regions);			
+			var world_regions = $('<p></p>');
+			world_regions.append(data.world_regions);			
+			$('body').append(country, country_name, title, reference_number, contract_number, publish_date, end_date, publish_date_amended, status, industry, ita_industries, specific_location, notice_type, trade_agreement, bid_type, competitive_procurement_strategy, non_competitive_procurement_strategy, procurement_organization, implementing_entity, description, contact, urls, source, trade_regions, world_regions);				
+			
+   		else if (source == 'FBO')
+   			var notice_type = $('<p></p>');
+			notice_type.append(data.notice_type);			
+			var publish_date = $('<p></p>');
+			publish_date.append(data.publish_date);			
+   			var procurement_organization = $('<p></p>');
+			procurement_organization.append(data.procurement_organization);			
+			var procurement_office = $('<p></p>');
+			procurement_office.append(data.procurement_office);			
+   			var procurement_organization_address = $('<p></p>');
+			procurement_organization_address.append(data.procurement_organization_address);			
+			var classification_code = $('<p></p>');
+			classification_code.append(data.classification_code);
+   			var industry = $('<p></p>');
+			industry.append(data.industry);			
+			var ita_industries = $('<p></p>');
+			ita_industries.append(data.ita_industries);			
+   			var procurement_office_address = $('<p></p>');
+			procurement_office_address.append(data.procurement_office_address);			
+			var title = $('<p></p>');
+			title.append(data.title);			
+   			var contract_number = $('<p></p>');
+			contract_number.append(data.contract_number);			
+			var end_date = $('<p></p>');
+			end_date.append(data.end_date);
+   			var contact = $('<p></p>');
+			contact.append(data.contact);			
+			var description = $('<p></p>');
+			description.append(data.description);			
+   			var competitive_procurement_strategy = $('<p></p>');
+			competitive_procurement_strategy.append(data.competitive_procurement_strategy);			
+			var url = $('<p></p>');
+			url.append(data.url);			
+   			var country = $('<p></p>');
+			country.append(data.country);			
+			var country_name = $('<p></p>');
+			country_name.append(data.country_name);
+   			var specific_address = $('<p></p>');
+			specific_address.append(data.specific_address);			
+			var source = $('<p></p>');
+			source.append(data.source);			
+   			var trade_regions = $('<p></p>');
+			trade_regions.append(data.trade_regions);			
+			var world_regions = $('<p></p>');
+			world_regions.append(data.world_regions);			
+			$('body').append(notice_type, publish_date, procurement_organization, procurement_office, procurement_organization_address, classification_code, industry, ita_industries, procurement_office_address, title, contract_number, end_date, contact, description, competitive_procurement_strategy, url, country, country_name, specific_address, source, trade_regions, world_regions);	
+			
+   		else if (source == 'STATE')   		
+   			var lead_source = $('<p></p>');
+			lead_source.append(data.lead_source);			
+			var country = $('<p></p>');
+			country.append(data.country);
+   			var country_name = $('<p></p>');
+			country_name.append(data.country_name);			
+			var specific_location = $('<p></p>');
+			specific_location.append(data.specific_location);			
+   			var title = $('<p></p>');
+			title.append(data.title);			
+			var project_number = $('<p></p>');
+			project_number.append(data.project_number);			
+   			var industry = $('<p></p>');
+			industry.append(data.industry);			
+			var ita_industries = $('<p></p>');
+			ita_industries.append(data.ita_industries);
+   			var project_size = $('<p></p>');
+			project_size.append(data.project_size);			
+			var description = $('<p></p>');
+			description.append(data.description);
+   			var tags = $('<p></p>');
+			tags.append(data.tags);			
+			var publish_date = $('<p></p>');
+			publish_date.append(data.publish_date);			
+   			var end_date = $('<p></p>');
+			end_date.append(data.end_date);			
+			var funding_source = $('<p></p>');
+			funding_source.append(data.funding_source);			
+   			var borrowing_entity = $('<p></p>');
+			borrowing_entity.append(data.borrowing_entity);			
+			var procurement_organization = $('<p></p>');
+			procurement_organization.append(data.procurement_organization);
+   			var contact = $('<p></p>');
+			contact.append(data.contact);			
+			var comments = $('<p></p>');
+			comments.append(data.comments);
+   			var submitting_officer = $('<p></p>');
+			submitting_officer.append(data.submitting_officer);			
+			var submitting_officer_contact = $('<p></p>');
+			submitting_officer_contact.append(data.submitting_officer_contact);			
+   			var url = $('<p></p>');
+			url.append(data.url);			
+			var status = $('<p></p>');
+			status.append(data.status);			
+   			var source = $('<p></p>');
+			source.append(data.source);			
+			var trade_regions = $('<p></p>');
+			trade_regions.append(data.trade_regions);
+			var world_regions = $('<p></p>');
+			world_regions.append(data.world_regions);			
+			$('body').append(lead_source, country, country_name, specific_location, title, project_number, industry, ita_industries, project_size, description, tags, publish_date, end_date, funding_source, borrowing_entity, procurement_organization, contact, comments, submitting_officer, submitting_officer_contact, url, status, source, trade_regions, world_regions);	
+			
+   		else if (source == 'UK')   		
+   			var country = $('<p></p>');
+			country.append(data.country);			
+			var country_name = $('<p></p>');
+			country_name.append(data.country_name);			
+   			var reference_number = $('<p></p>');
+			reference_number.append(data.reference_number);			
+			var publish_date = $('<p></p>');
+			publish_date.append(data.publish_date);			
+   			var min_contract_value = $('<p></p>');
+			min_contract_value.append(data.min_contract_value);			
+			var max_contract_value = $('<p></p>');
+			max_contract_value.append(data.max_contract_value);			
+   			var status = $('<p></p>');
+			status.append(data.status);			
+			var url = $('<p></p>');
+			url.append(data.url);			
+   			var procurement_organization = $('<p></p>');
+			procurement_organization.append(data.procurement_organization);			
+			var contact = $('<p></p>');
+			contact.append(data.contact);			
+   			var title = $('<p></p>');
+			title.append(data.title);			
+			var description = $('<p></p>');
+			description.append(data.description);
+   			var notice_type = $('<p></p>');
+			notice_type.append(data.notice_type);			
+			var industry = $('<p></p>');
+			industry.append(data.industry);			
+   			var ita_industries = $('<p></p>');
+			ita_industries.append(data.ita_industries);			
+			var specific_location = $('<p></p>');
+			specific_location.append(data.specific_location);			
+   			var source = $('<p></p>');
+			source.append(data.source);			
+			var trade_regions = $('<p></p>');
+			trade_regions.append(data.trade_regions);			
+   			var world_regions = $('<p></p>');
+			world_regions.append(data.world_regions);			
+			$('body').append(country, country_name, reference_number, publish_date, min_contract_value, max_contract_value, status, url, procurement_organization, contact, title, description, notice_type, industry, ita_industries, specific_location, source, trade_regions, world_regions);	
+   		
+   		else if (source == 'MCA')   		
+   			var country = $('<p></p>');
+			country.append(data.country);			
+			var country_name = $('<p></p>');
+			country_name.append(data.country_name);			
+   			var publish_date = $('<p></p>');
+			publish_date.append(data.publish_date);			
+			var url = $('<p></p>');
+			url.append(data.url);			
+   			var categories = $('<p></p>');
+			categories.append(data.categories);			
+			var title = $('<p></p>');
+			title.append(data.title);			
+   			var description = $('<p></p>');
+			description.append(data.description);			
+			var funding_source = $('<p></p>');
+			funding_source.append(data.funding_source);			
+  			var source = $('<p></p>');
+			source.append(data.source);			
+			var trade_regions = $('<p></p>');
+			trade_regions.append(data.trade_regions);			
+			var world_regions = $('<p></p>');
+			world_regions.append(data.world_regions);			
+			$('body').append(country, country_name, publish_date, url, categories, title, description, funding_source, source, trade_regions, world_regions);	
+			
+   		else if (source == 'USTDA')   		
+   			var title = $('<p></p>');
+			title.append(data.title);			
+			var publish_date = $('<p></p>');
+			publish_date.append(data.publish_date);			
+   			var end_date = $('<p></p>');
+			end_date.append(data.end_date);			
+			var description = $('<p></p>');
+			description.append(data.description);			
+   			var url = $('<p></p>');
+			url.append(data.url);			
+			var source = $('<p></p>');
+			source.append(data.source);
+   			var country = $('<p></p>');
+			country.append(data.country);			
+			var country_name = $('<p></p>');
+			country_name.append(data.country_name);
+   			var trade_regions = $('<p></p>');
+			trade_regions.append(data.trade_regions);			
+			var world_regions = $('<p></p>');
+			world_regions.append(data.world_regions);			
+			$('body').append(title, publish_date, end_date, description, url, source, country, country_name, trade_regions, world_regions);		
+  		
+  		else 
+        $('body').html("<p>No source field.</p>");
+        
+//    var answer = $('<p></p>');
+ //   answer.append(data.answer);
+  //  $('body').append(answer);
+  },
+
+  error: function() {
+    var result = $('<p>page not found</p>');
+    $('body').append(result);
+    // Here's where you handle an error response.
+    // Note that if the error was due to a CORS issue,
+    // this function will still fire, but there won't be any additional
+    // information about the error.
+  }
+});
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
